@@ -1,0 +1,16 @@
+{
+  "session": "adk-demo-s1",
+  "domain": "adk-demo",
+  "questions": [
+    {
+      "id": "g1-scope",
+      "prompt": "What is the first publishable slice of the adk-demo agent, and what is out of scope?",
+      "answer": "First publishable slice: a minimal Google ADK agent for the \u0060adk-demo\u0060 domain.\n\n- \u0060root_agent\u0060 is an \u0060LlmAgent\u0060 (model \u0060gemini-2.0-flash\u0060) with two deterministic tools: \u0060get_weather(city)\u0060 and \u0060get_current_time(city)\u0060.\n- Package layout follows ADK conventions: \u0060adk_demo/agent.py\u0060 exposes \u0060root_agent\u0060; \u0060adk_demo/__init__.py\u0060 does \u0060from . import agent\u0060, so \u0060adk run adk_demo\u0060 / \u0060adk web\u0060 work when a Gemini key is set.\n- intent-cli owns the planning trail: this interview shapes the intent tree, which unblocks \u0060intent next-slice\u0060 and the first packet/issue.\n\nOut of scope for slice 1: streaming, multi-agent handoff, persistent sessions, real weather API.\n"
+    },
+    {
+      "id": "g2-runtime",
+      "prompt": "How should the demo run when no API key is present?",
+      "answer": "The demo must run with no credentials so it works in CI and on a fresh machine.\n\n\u0060run_demo.py\u0060 branches on environment:\n- If \u0060GOOGLE_API_KEY\u0060 or \u0060GEMINI_API_KEY\u0060 is set: run \u0060root_agent\u0060 through an ADK \u0060Runner\u0060 \u002B \u0060InMemorySessionService\u0060 against a sample prompt and print the model\u0027s reply.\n- Otherwise: call the tool functions directly and print their structured output, with a one-line note telling the user to set a key for the full LLM run.\n\n\u0060test_agent.py\u0060 asserts the deterministic tool outputs (no network, no key), so there is one runnable check that fails if the tool logic breaks. This is the offline contract that keeps the demo green without an API key.\n"
+    }
+  ]
+}

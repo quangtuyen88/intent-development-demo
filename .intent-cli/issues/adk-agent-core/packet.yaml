@@ -1,0 +1,49 @@
+implementation_issue_packet:
+  issue_title: "adk-agent-core: minimal runnable Google ADK agent"
+  issue_kind: feature
+  source_execution_unit: adk-agent-core
+  domain: adk-demo
+  target_repo: quangtuyen88/intent-test
+  target_path: adk_demo/agent.py, adk_demo/__init__.py, run_demo.py, test_agent.py
+  target_part: "Google ADK root_agent with two deterministic tools + no-key runtime"
+  dependencies: []
+  technical_baseline:
+    - "google-adk >= 2.3 (Python >= 3.10), installed via uv"
+    - "ADK package convention: adk_demo/__init__.py does `from . import agent`"
+  intent_references:
+    - "intents/adk-demo/intent-tree/00-map.md"
+    - "intents/adk-demo/features/adk-agent-core/overview.md"
+  acceptance_criteria:
+    - "root_agent (LlmAgent, gemini-2.5-flash) exposes get_weather + get_current_time"
+    - "python test_agent.py passes with no API key (deterministic tool asserts)"
+    - "python run_demo.py prints tool output with no key; runs Runner when key set"
+    - "adk run adk_demo resolves root_agent without import errors"
+
+intent_placement:
+  primary_intent: intents/adk-demo/intent-tree/00-map.md
+  supporting_intents:
+    - intents/adk-demo/features/adk-agent-core/overview.md
+  new_intent_needed: false
+  placement_rationale: "Slice 1 of the adk-demo domain; both intents in the map are delivered here."
+knowledge_updates:
+  intent_tree:
+    required: false
+    target_paths: []
+    summary: ""
+  adr:
+    required: false
+    target_paths: []
+    decision_title: ""
+  diagram:
+    required: false
+    target_paths: []
+    diagram_type: none
+  docs:
+    required: true
+    target_paths:
+      - README.md
+    summary: "README documents the intent-cli trail and how to run the agent."
+closeout_learning:
+  expected: "Confirm ADK 2.x Runner API shape (run_async vs run) once exercised with a real key."
+  write_back_required: false
+  write_back_targets: []
