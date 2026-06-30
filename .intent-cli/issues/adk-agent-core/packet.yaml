@@ -3,7 +3,7 @@ implementation_issue_packet:
   issue_kind: feature
   source_execution_unit: adk-agent-core
   domain: adk-demo
-  target_repo: quangtuyen88/intent-test
+  target_repo: quangtuyen88/intent-development-demo
   target_path: adk_demo/agent.py, adk_demo/__init__.py, run_demo.py, test_agent.py
   target_part: "Google ADK root_agent with two deterministic tools + no-key runtime"
   dependencies: []

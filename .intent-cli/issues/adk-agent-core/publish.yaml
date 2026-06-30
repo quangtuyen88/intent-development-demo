@@ -1,0 +1,7 @@
+execution_unit: adk-agent-core
+publish_status: issue-created
+packet_path: "/Users/tuyen/vnbnode/intent-test/.intent-cli/issues/adk-agent-core"
+issue_body_path: "/Users/tuyen/vnbnode/intent-test/.intent-cli/issues/adk-agent-core/github-body.md"
+created_issue_number: 1
+created_issue_url: "https://github.com/quangtuyen88/intent-development-demo/issues/1"
+published_label_name: null

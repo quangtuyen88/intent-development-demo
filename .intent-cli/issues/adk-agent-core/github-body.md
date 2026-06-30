@@ -24,7 +24,7 @@ there is no agent package and nothing runnable yet.
 
 ## Target Repo / Path / Part
 
-Repository: `quangtuyen88/intent-test`
+Repository: `quangtuyen88/intent-development-demo`
 
 Target paths: `adk_demo/agent.py`, `adk_demo/__init__.py`, `run_demo.py`, `test_agent.py`
 

@@ -39,7 +39,7 @@ export GOOGLE_GENAI_USE_VERTEXAI=FALSE
 Reproduces the design half of the demo:
 
 ```bash
-intent-cli intent init --domain adk-demo --target-repo quangtuyen88/intent-test --write
+intent-cli intent init --domain adk-demo --target-repo quangtuyen88/intent-development-demo --write
 intent-cli interview record-answer --session adk-demo-s1 --domain adk-demo \
   --question g1-scope --prompt "..." --from-file answer.md --write
 intent-cli interview compile --session adk-demo-s1 --domain adk-demo
@@ -47,8 +47,8 @@ intent-cli intent draft-from-interview --session adk-demo-s1 --domain adk-demo -
 intent-cli intent add-feature --domain adk-demo --name adk-agent-core --write
 intent-cli intent next-slice --domain adk-demo --dry-run          # -> candidate adk-agent-core
 intent-cli packet draft --execution-unit adk-agent-core --domain adk-demo \
-  --target-repo quangtuyen88/intent-test                          # writes the issue packet
-intent-cli issue publish-flow adk-agent-core --repo quangtuyen88/intent-test   # add --write to publish
+  --target-repo quangtuyen88/intent-development-demo                          # writes the issue packet
+intent-cli issue publish-flow adk-agent-core --repo quangtuyen88/intent-development-demo   # add --write to publish
 ```
 
 The ready-to-publish issue body is `.intent-cli/issues/adk-agent-core/github-body.md`.

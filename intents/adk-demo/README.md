@@ -1,6 +1,6 @@
 # adk-demo
 
-Target repo: `quangtuyen88/intent-test`
+Target repo: `quangtuyen88/intent-development-demo`
 
 Bootstrapped by `intent-cli intent init`.
 

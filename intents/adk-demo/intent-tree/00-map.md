@@ -1,7 +1,7 @@
 # Intent Map
 
 - Domain: `adk-demo`
-- Target repo: `quangtuyen88/intent-test`
+- Target repo: `quangtuyen88/intent-development-demo`
 - Initial map: shaped from interview session `adk-demo-s1`
 
 ## Canonical domain shape
